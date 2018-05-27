@@ -1,0 +1,445 @@
+Wildlife,WT,PE,NU,RED,arrest_district,Year,Season,Volume
+Tiger,15,0,0,EN,Parsa,2011,Winter,15
+Rhinoceros,1,0,0,VU,Syanjha,2011,Winter,1
+Leopard,0,1,0,VU,Lalitpur,2011,Spring ,1
+Leopard,0,1,0,VU,Kavre,2011,Spring ,1
+Tiger,8.8,1,0,EN,Makwanpur,2011,Spring ,9.8
+Rhinoceros,0,12,0,VU,Kathmandu,2011,Spring ,12
+Rhinoceros,1,0,0,VU,Lalitpur,2011,Spring ,1
+Rhinoceros,1,0,0,VU,Kathmandu,2011,Spring ,1
+Rhinoceros,1,0,0,VU,Kathmandu,2011,Summer ,1
+Leopard,4.5,1,0,VU,Tanahun,2011,Summer ,5.5
+Red panda,0,2,0,EN,Kathmandu,2011,Autumn ,2
+Bear,0.073,0,0,VU,Kathmandu,2012,Winter,0.073
+Leopard,0,2,0,VU,Kathmandu,2012,Winter,2
+Leopard,0,1,0,VU,Kathmandu,2012,Winter,1
+Bear,0,2,0,VU,Kathmandu,2012,Winter,2
+Musk Deer,0,1,0,EN,Kathmandu,2012,Spring ,1
+Leopard,0,2,0,VU,Kavre,2012,Spring ,2
+Rhinoceros,1,0,0,VU,Kathmandu,2012,Spring ,1
+Rhinoceros,1,0,0,VU,Kaski,2012,Spring ,1
+elephant,0,2,0,EN,Kailali,2012,Summer ,2
+Bear,0.185,0,0,VU,Kathmandu,2012,Summer ,0.185
+Tiger,10,0,0,EN,Makwanpur,2012,Summer ,10
+Bear,2,0,0,VU,Kathmandu,2012,Summer ,2
+Leopard,0,2,0,VU,Lalitpur,2012,Summer ,2
+Tiger,0,1,0,EN,Kathmandu,2012,Autumn ,1
+Red panda,0,2,0,EN,Kathmandu,2012,Autumn ,2
+Leopard,0,1,0,VU,Sunsari,2013,Winter,1
+Tiger,0,12,0,EN,Kathmandu,2013,Spring ,12
+Pangolin,0,1,0,EN,Kathmandu,2013,Winter,1
+Red panda,0,1,0,EN,Nuwakot,2013,Winter,1
+Leopard,0,1,0,VU,Kathmandu,2013,Spring ,1
+Rhinoceros,1,0,0,VU,Chitwan,2013,Spring ,1
+Leopard,0,1,0,VU,Bhaktapur,2013,Spring ,1
+Leopard,0,1,0,VU,Kathmandu,2013,Spring ,1
+Leopard,0,1,0,VU,Kavre,2013,Spring ,1
+Rhinoceros,1,0,0,VU,Rautahat,2013,Spring ,1
+Rhinoceros,1,0,0,VU,Kathmandu,2012,FALSE,1
+Red panda,0,2,0,EN,Kathmandu,2013,Summer ,2
+Red panda,0,1,0,EN,Kathmandu,2013,Summer ,1
+Leopard,0,1,0,VU,Surkhet,2013,Summer ,1
+Red panda,0,2,0,EN,Kathmandu,2013,Summer ,2
+Red panda,0,1,0,EN,Kathmandu,2013,Summer ,1
+Red panda,0,3,0,EN,Kathmandu,2013,Autumn ,3
+Red panda,0,1,0,EN,Kathmandu,2013,Autumn ,1
+Red panda,0,1,0,EN,Jhapa,2013,Winter,1
+Owl,0,1,0,Undefined,Jhapa,2013,Winter,1
+Python ,0,0,1,VU ,Kathmandu,2013,Winter,1
+Tiger,0.2,0,0,EN,Kathmandu,2014,Winter,0.2
+Musk Deer,0,2,0,EN,Kathmandu,2014,Winter,2
+Pangolin,0,0,1,EN,Kathmandu,2014,Spring ,1
+Owl,0,0,1,Undefined,Kathmandu,2014,Spring ,1
+Leopard,0,1,0,VU,Kathmandu,2014,Spring ,1
+Red panda,0,2,0,EN,Sindhupalchok,2014,Spring ,2
+Red panda,0,2,0,EN,Kathmandu,2013,Spring ,2
+elephant,0,3,0,EN,Bhaktapur,2014,Spring ,3
+elephant,0,8,0,EN,Lalitpur,2014,Spring ,8
+Leopard,1.5,1,0,VU,Kavre,2014,Summer ,2.5
+Leopard,0,1,0,VU,Lalitpur,2014,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2014,Summer ,1
+Rhinoceros,1,0,0,VU,Makwanpur,2014,Summer ,1
+Owl,0,0,1,Undefined,Kathmandu,2014,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2014,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2014,Summer ,1
+Leopard,0,2,0,VU,Kathmandu,2014,Autumn ,2
+Leopard,0,1,0,VU,Nuwakot,2014,Autumn ,1
+Red panda,0,1,0,EN,Bhaktapur,2014,Winter,1
+Leopard,0,1,0,VU,Nuwakot,2014,Winter,1
+Rhinoceros,1,0,0,VU,Bhaktapur,2015,Winter,1
+elephant,0,1,0,EN,Parsa,2015,Winter,1
+Leopard,0,1,0,VU,Kathmandu,2015,Winter,1
+Tiger,11.79,1,0,EN,Surkhet,2015,Winter,12.79
+Red panda,0,1,0,EN,Kathmandu,2015,Spring ,1
+Bear,0,1,0,VU,Kathmandu,2015,Spring ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Spring ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Summer ,1
+Rhinoceros,0.65,0.65,0,VU,Kathmandu,2015,Summer ,1.3
+Leopard,0,1,0,VU,Kathmandu,2015,Summer ,1
+Tortoise,0,0,1,Undefined,Kathmandu,2015,Summer ,1
+elephant,0,19,0,EN,Kathmandu,2015,Summer ,19
+Red Panda,0,1,0,EN,Sindhupalchok,2015,Autumn ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Autumn ,1
+Bear,0,1,0,VU,Kathmandu,2015,Autumn ,1
+Pangolin,0,4,0,EN,Kathmandu,2015,Autumn ,4
+Bear,0,1,0,VU,Kathmandu,2015,Autumn ,1
+Tortoise,0,0,1,Undefined,Bhaktapur,2015,Autumn ,1
+Red Panda,0,1,0,EN,Kathmandu,2015,Autumn ,1
+Owl,0,0,1,Undefined,Kathmandu,2015,Autumn ,1
+Pangolin,0,0,1,EN,Bhaktapur,2015,Winter,1
+Tortoise,0,0,1,Undefined,Lalitpur,2015,Winter,1
+Tortoise,0,0,1,Undefined,Lalitpur,2015,Winter,1
+Leopard,6,4,1,VU,Darchula,2012,Autumn ,11
+Tiger,6.2,1,0,EN,Darchula,2013,Spring ,7.2
+Leopard,0,5,0,VU,Darchula,2013,Spring ,5
+elephant,6,0,0,EN,Darchula,2013,Spring ,6
+Tiger,15,4,0,EN,Darchula,2015,Summer ,19
+Leopard,15,6,0,VU,Darchula,2015,Summer ,21
+Goral,0,5,0,NT,Ilam,2013,Spring ,5
+Bear,0,4,0,VU,Sankhuwasabha,2011,Summer ,4
+Tiger,0,1,0,EN,Sankhuwasabha,2011,Autumn ,1
+Bear,0,1,0,VU,Sankhuwasabha,2011,Autumn ,1
+Bear,0,2,0,VU,Sankhuwasabha,2011,Autumn ,2
+Musk Deer,0,1,0,EN,Sankhuwasabha,2014,Summer ,1
+Leopard,0,2,0,VU,Tanahun,2013,Winter,2
+Leopard,0,1,0,VU,Makwanpur,2012,Summer ,1
+Tiger,0,401,0,EN,Makwanpur,2012,Summer ,401
+Pangolin,0,300,0,EN,Makwanpur,2012,Autumn ,300
+Python ,0,2,1,VU ,Makwanpur,2012,Autumn ,3
+Red panda,0,3,0,EN,Makwanpur,2013,Spring ,3
+Leopard,0,82,1,VU,Makwanpur,2014,Spring ,83
+Python ,0,1,0,VU ,Makwanpur,2014,Spring ,1
+Pangolin,0.02,0,0,EN,Dolakha,2014,FALSE,0.02
+Bear,0,1,0,VU,Achham,2012,Spring ,1
+Bear,0,1,0,VU,Achham,2012,Winter,1
+Bear,0,1,0,VU,Achham,2012,Spring ,1
+Bear,0,1,0,VU,Achham,2012,Spring ,1
+Bear,0,1,0,VU,Achham,2012,Spring ,1
+Bear,0,1,0,VU,Achham,2013,Winter,1
+Bear,0,1,0,VU,Achham,2013,Spring ,1
+Bear,0,1,0,VU,Achham,2013,Spring ,1
+Bear,0,1,0,VU,Achham,2013,Spring ,1
+Leopard,0,1,0,VU,Bhaktapur,2012,Spring ,1
+Red panda,0,2,0,EN,Bhaktapur,2014,Spring ,2
+Seahorse,4.7,0,0,Undefined,Bhaktapur,2014,Winter,4.7
+Leopard,0,1,0,VU,Bhaktapur,2014,Autumn ,1
+Red panda,0,1,0,EN,Bhaktapur,2014,Autumn ,1
+Red panda,0,1,0,EN,Bhaktapur,2014,Winter,1
+Leopard,2.2,0,0,VU,Bhaktapur,2015,Spring ,2.2
+Pangolin,0,0,1,EN,Bhaktapur,2015,Winter,1
+Owl,0,0,1,Undefined,Gorkha,2012,Spring ,1
+Owl,0,0,2,Undefined,Gorkha,2012,Spring ,2
+Leopard,4.8,1,0,VU,Gorkha,2012,Autumn ,5.8
+Leopard,2.5,1,0,VU,Nawalparasi,2013,Summer ,3.5
+Leopard,0,1,0,VU,Nawalparasi,2014,Spring ,1
+Leopard,0,1,0,VU,Nawalparasi,2014,Spring ,1
+Owl,0,0,1,Undefined,Kailali,2011,Spring ,1
+Rhinoceros,1,0,0,VU,Kailali,2011,Autumn ,1
+Leopard,2.6,1,0,VU,Kailali,2013,Spring ,3.6
+Leopard,1.4,1,0,VU,Kailali,2014,Autumn ,2.4
+Leopard,0,1,0,VU,Kailali,2014,Winter,1
+Leopard,10.735,1,0,VU,Kailali,2015,Winter,11.735
+Leopard,2.3,1,0,VU,Kailali,2015,Summer ,3.3
+Tiger,0,1,0,EN,Kailali,2015,Summer ,1
+Leopard,8,1,0,VU,Kailali,2015,Summer ,9
+Tiger,3.25,1,0,EN,Kailali,2015,Autumn ,4.25
+Leopard,0,1,0,VU,Lalitpur,2011,Spring ,1
+Rhinoceros,1,0,0,VU,Lalitpur,2011,Spring ,1
+Leopard,0,1,0,VU,Lalitpur,2013,Winter,1
+Elephant,0,4,0,EN,Lalitpur,2013,Spring ,4
+Leopard,0,1,0,VU,Lalitpur,2014,Summer ,1
+Tortoise,0,0,1,Undefined,Lalitpur,2015,Summer ,1
+Pangolin,0,1,0,EN,Lalitpur,2015,Summer ,1
+Leopard,1,0,0,VU,Kavre,2012,Summer ,1
+leopard,0,1,0,VU,Kavre,2011,Spring ,1
+Leopard,0,2,0,VU,Kavre,2012,Spring ,2
+Leopard,0,1,0,VU,Kavre,2013,Spring ,1
+Leopard,10.5,4,0,VU,Dadeldhura,2015,Spring ,14.5
+Tiger,19,0,0,EN,Kanchanpur,2015,Winter,19
+Tiger,21,0,0,EN,Kanchanpur,2015,Spring ,21
+Pangolin,0,3,0,EN,Sarlahi,2013,Winter,3
+Musk Deer,0,3,0,EN,Bara,2012,Spring ,3
+Spotted deer,0,2,0,LC,Bara,2013,Winter,2
+Tiger,3.5,0,0,EN,Bara,2013,Spring ,3.5
+Tiger,7.95,10,0,EN,Bara,2014,Winter,17.95
+Tortoise,0,0,1,Undefined,Jhapa, 2014,FALSE,1
+Red panda,0,0,1,EN,Jhapa,2013,Winter,1
+Python ,0,0,1,VU ,Jhapa,2010,FALSE,1
+Leopard,0,1,0,VU,Sindhupalchok,2011,Spring ,1
+Bear,0,10,0,VU,Sindhupalchok,2013,Winter,10
+Red panda,0,1,0,EN,Sindhupalchok,2015,Autumn ,1
+Bear,0,4,0,VU,Udayapur,2015,Spring ,4
+Leopard,0,1,0,VU,Solukhumbu,2012,Autumn ,1
+Musk Deer,0,1,0,EN,Solukhumbu,2014,Winter,1
+Leopard,2.685,1,0,VU,Chitwan,2013,Winter,3.685
+Rhinoceros,1,12,0,VU,Chitwan,2013,Autumn ,13
+Tortoise,0,0,1,Undefined,Chitwan,2013,Winter,1
+Python ,0,0,1,VU ,Chitwan,2015,Spring ,1
+Rhinoceros,1,0,0,VU,Morang,2011,Spring ,1
+Bear,0,0,2,VU,Morang,2011,Autumn ,2
+Python ,0,0,2,VU ,Morang,2011,Autumn ,2
+Owl,0,0,1,Undefined,Morang,2011,Autumn ,1
+Musk Deer,0,2,0,EN,Morang,2012,Spring ,2
+Pangolin,0,0,2,EN,Morang,2015,Summer ,2
+Leopard,4.8,1,0,VU,Baitadi,2015,Spring ,5.8
+Rhinoceros,1,0,0,VU,Parsa,2015,Spring ,1
+Tortoise,0,3,0,Undefined,Dang,2012,Spring ,3
+Tiger,0,5,0,EN,Dang,2014,Spring ,5
+Leopard,0,140,0,VU,Dang,2014,Spring ,140
+Leopard,0,5,0,VU,Dang,2014,Summer ,5
+Leopard,0,2,0,VU,Dang,2015,Autumn ,2
+Seahorse,0,1,0,Undefined,Sunsari,2013,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2014,Spring ,1
+Leopard,0,1,0,VU,Kathmandu,2014,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2013,Autumn ,1
+Red panda,0,1,0,EN,Kathmandu,2014,Winter,1
+Red panda,0,1,0,EN,Kathmandu,2014,Autumn ,1
+Red panda,0,1,0,EN,Kathmandu,2015,Spring ,1
+Red panda,0,1,0,EN,Kathmandu,2015,Spring ,1
+Red panda,0,2,0,EN,Kathmandu,2014,Summer ,2
+Red panda,0,1,0,EN,Kathmandu,2015,Summer ,1
+Tortoise,0,0,1,Undefined,Kathmandu,2015,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Summer ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Autumn ,1
+Leopard,0,1,0,VU,Kathmandu,2015,Autumn ,1
+Elephant,0,3,0,EN,Kathmandu,2015,Autumn ,3
+Pangolin,0,1,0,EN,Kathmandu,2015,Winter,1
+Red panda,0,1,0,EN,Kathmandu,2015,Winter,1
+Leopard,0,1,0,VU,Surkhet,2013,Summer ,1
+Bear,0,47,0,VU,Surkhet,2014,Summer ,47
+Leopard,0,16,0,VU,Surkhet,2013,Autumn ,16
+Musk Deer,0,6,0,EN,Surkhet,2015,Winter,6
+Tiger,0,63,0,EN,Surkhet,2015,Spring ,63
+Leopard,0,41,0,VU,Surkhet,2015,Spring ,41
+Tiger,5.25,0,0,EN,Surkhet,2015,Autumn ,5.25
+Leopard,8.13,1,0,VU,Surkhet,2015,Winter,9.13
+Rhinoceros,1,0,0,VU,Dhading,2011,Summer ,1
+Leopard,0,1,0,VU,Dhading,2012,Winter,1
+Leopard,0,1,0,VU,Dhading,2013,Spring ,1
+Owl,0,0,1,Undefined,Dhading,2013,Spring ,1
+Owl,0,0,1,Undefined,Dhading,2015,Summer ,1
+Leopard,0,1,0,VU,Darchula,2014,Winter,1
+Tiger,5.3,0,0,EN,Bara,2011,Autumn ,5.3
+Tiger,0,1,0,EN,Bara,2013,Winter,1
+Red panda,0,1,0,EN,Rasuwa,2014,Autumn ,1
+Red panda,3,1,0,EN,Rasuwa,2014,Autumn ,4
+Musk Deer,2,2,0,EN,Sindhupalchok,2015,Winter,4
+Red panda,0,2,0,EN,Rasuwa,2015,Spring ,2
+Red panda,0,1,0,EN,Rasuwa,2014,Summer ,1
+Musk Deer,0,1,0,EN,Solukhumbu,2014,Summer ,1
+Sambar deer ,2,0,0,VU,Chitwan,2013,Autumn ,2
+Spotted deer,5,0,0,LC,Chitwan,2014,Winter,5
+Spotted deer,0,0,2,LC,Chitwan,2015,Winter,2
+Spotted deer,5,0,0,LC,Chitwan,2015,Spring ,5
+Spotted deer,0,0,1,LC,Chitwan,2015,Autumn ,1
+Musk Deer,1,12,0,EN,Musatang,2012,Summer ,13
+Goral,7.5,0,0,NT,Kaski,2015,Summer ,7.5
+Sambar deer ,2,0,0,VU,Banke,2012,Winter,2
+Sambar deer ,2,0,0,VU,Banke,2012,Winter,2
+Sambar deer ,2,0,0,VU,Banke,2013,Winter,2
+Sambar deer ,2,0,0,VU,Banke,2013,Winter,2
+Sambar deer ,2,0,0,VU,Banke,2012,Summer ,2
+Sambar deer ,2,0,0,VU,Banke,2012,Winter,2
+Sambar deer ,2,0,0,VU,Banke,2012,Spring ,2
+Goral,6,0,1,NT,Banke,2012,Summer ,7
+Spotted deer,0,0,1,LC,Banke,2012,Autumn ,1
+Spotted deer,0,0,1,LC,Banke,2013,Summer ,1
+Spotted deer,2,0,0,LC,Banke,2013,Winter,2
+Sambar deer ,5,1,0,VU,Banke,2013,Winter,6
+Spotted deer,1,1,0,LC,Banke,2014,Summer ,2
+Sambar deer ,2,0,0,VU,Banke,2014,Summer ,2
+Spotted deer,2.5,0,0,LC,Banke,2015,Spring ,2.5
+Goral,0,1,1,NT,RNP,2011,Summer ,2
+Bear,1,4,0,VU,RNP,2011,Autumn ,5
+Tiger,18,1,0,EN,Kanchanpur,2015,Winter,19
+Leopard,0,1,0,VU,Kanchanpur,2015,Spring ,1
+Rhinoceros,0.2,0,0,VU,Chitwan,2011,Winter,0.2
+tiger,15,0,0,EN,Parsa,2011,Winter,15
+Rhinoceros,0.95,0,0,VU,Kathmandu,2011,Summer ,0.95
+Bear,0,4,0,VU,Sankhuwasabha,2011,Summer ,4
+Bear,0,5,0,VU,Sankhuwasabha,2011,Summer ,5
+Goral,0,5,0,NT,Sankhuwasabha,2011,Summer ,5
+Rhinoceros,1,0,0,VU,Kathmandu,2012,Winter,1
+Spotted Deer,0,1,0,LC,KTWLR,2012,Spring ,1
+Rhinoceros,0.34,0,0,VU,Kathmandu,2012,Spring ,0.34
+Leopard,0,1,0,VU,Kathmandu,2012,Spring ,1
+Rhinoceros,0,3,0,VU,Chitwan,2012,Summer ,3
+Bear,0,5,0,VU,Sankhuwasabha,2012,Autumn ,5
+Rhinoceros,2,0,0,VU,Bardiya,2011,Winter,2
+Rhinoceros,1,0,0,VU,Makwanpur,2011,Winter,1
+Tiger,15,0,0,EN,Parsa,2011,Winter,15
+Rhinoceros,1,0,0,VU,Lalitpur,2011,Spring ,1
+Owl,0,0,5,Undefined,Kathmandu,2011,Spring ,5
+tiger,0,2,0,EN,Udayapur,2011,Spring ,2
+Leopard,0,2,0,VU,kanchanpur,2011,Summer ,2
+Pangolin,10,10,0,EN,Sindhupalchok,2011,Summer ,20
+Rhinoceros,0.85,0,0,VU,Kailali,2011,Autumn ,0.85
+Bear,0,1,0,VU,Kathmandu,2011,Winter,1
+Musk Deer,0,2,0,EN,Kathmandu,2011,Winter,2
+Leopard,0,0,1,VU,Doti,2012,Winter,1
+Rhinoceros,1,0,0,VU,Kathmandu,2012,Winter,1
+Pangolin,6,6,0,EN,Ilam,2012,Spring ,12
+Rhinoceros,1,0,0,VU,kaski,2012,Spring ,1
+Pangolin,0,50,1,EN,Panchthar,2012,Summer ,51
+Pangolin,1,1,0,EN,kavre,2012,Summer ,2
+Elephant,0,0,1,EN,Jhapa,2012,Summer ,1
+Rhinoceros,0,3,0,VU,Chitwan,2012,Summer ,3
+Elephant,0,1,0,EN,Jhapa ,2012,Summer ,1
+Pangolin,1,1,0,EN,Sindhupalchok,2012,Autumn ,2
+Red Panda,0,0,1,EN,Panchthar,2015,FALSE,1
+Musk Deer,0,1,0,EN,Sindhupalchok,2015,Winter,1
+Goral,0,2,0,NT,Sindhupalchok,2015,Winter,2
+Spotted Deer,2,0,0,LC,Kanchanpur,2015,Winter,2
+Leopard,0,1,0,VU,Bhaktapur,2015,Winter,1
+Tiger,19,1,0,EN,Kanchanpur,2015,Winter,20
+Rhinoceros,0.506,0,0,VU,Parsa,2015,Winter,0.506
+Leopard,0,2,0,VU,Nuwakot,2014,Winter,2
+Leopard,0,2,0,VU,Bardiya,2014,Winter,2
+Tiger,0,2,0,EN,Bardiya,2014,Winter,2
+Red Panda,0,1,0,EN,Dolakha,2014,Autumn ,1
+Leopard,1.4,1,0,VU,Kailali,2014,Autumn ,2.4
+Red Panda,0,5,0,EN,Kathmandu,2014,Autumn ,5
+Tiger,0,14,0,EN,Sankhuwasabha,2014,Autumn ,14
+Red Panda,0,1,0,EN,Nuwakot,2014,Autumn ,1
+Pangolin,4,4,0,EN,Dolakha,2014,Autumn ,8
+Red Panda,0,1,0,EN,Bhaktapur,2014,Autumn ,1
+Musk Deer,0,1,0,EN,Solukhumbu,2014,Winter,1
+Rhinoceros,1,0,0,VU,Kathmandu,2014,Winter,1
+Tiger,0,0,1,EN,Baitadi,2012,Summer ,1
+Tiger,0,2,0,EN,Baitadi,2012,Autumn ,2
+Tiger,0,1,0,EN,Kathmandu,2012,Autumn ,1
+Red Panda,0,1,0,EN,Kathmandu,2012,Autumn ,1
+Tortoise,2,0,0,Undefined,Makwanpur,2012,Autumn ,2
+Red Panda,0,1,0,EN,Jajarkot,2012,Autumn ,1
+Pangolin,0,1,0,EN,Sankhuwasabha,2012,Autumn ,1
+Rhinoceros,0,0,1,VU,Nawalparasi,2010,FALSE,1
+Bear,0,0,4,VU,Jajarkot,2012,Autumn ,4
+Leopard,0,4,0,VU,Darchula,2012,Autumn ,4
+Rhinoceros,1,0,0,VU,Chitwan,2013,Spring ,1
+Leopard,0,2,0,VU,Dhading,2013,Spring ,2
+Pangolin,2,2,0,EN,Jhapa,2013,Spring ,4
+Tiger,0,12,0,EN,Bara,2013,Spring ,12
+Tiger,0,0,1,EN,Kailali,2014,Summer ,1
+Leopard,4.8,1,0,VU,Baitadi,2015,Spring ,5.8
+Leopard,0,0,2,VU,Siraha,2015,Spring ,2
+Leopard,0,1,0,VU,Kathmandu,2013,FALSE,1
+Tiger,0,6,0,EN,Salyan,2015,Spring ,6
+Tortoise,0,0,1,Undefined,Lalitpur,2015,Summer ,1
+Tiger,0,1,0,EN,Darchula,2015,Summer ,1
+Tiger,0,1,0,EN,Kanchanpur,2015,Summer ,1
+Tiger,21,1,0,EN,Kanchanpur,2015,Summer ,22
+Tiger,0,1,0,EN,Darchula,2015,Spring ,1
+Pangolin,0,0,1,EN,Jhapa,2015,Summer ,1
+Musk Deer,0,3,0,EN,Banke,2015,Summer ,3
+Spotted deer,1,0,0,LC,Kanchanpur,2015,Winter,1
+Red Panda,0,1,0,EN,Sindhupalchok,2015,Autumn ,1
+Leopard,0,2,0,VU,Dang,2015,Autumn ,2
+Pangolin,0,0,1,EN,Palpa,2015,Autumn ,1
+Rhinoceros,0,0,1,VU,Chitwan,2015,Autumn ,1
+Tiger,0,1,0,EN,Kathmandu,2015,Autumn ,1
+Tiger,3,0,0,EN,Bardiya,2013,Spring ,3
+Pangolin,17,17,0,EN,Sunsari,2013,Spring ,34
+Tiger,53,6,0,EN,Gorkha,2012,FALSE,59
+Pangolin,1.8,1.8,0,EN,Kathmandu,2013,FALSE,3.6
+Red Panda,0,1,0,EN,Nuwakot,2015,FALSE,1
+Leopard,0,1,0,VU,Chitwan,2013,Winter,1
+Leopard,0,1,0,VU,Dolakha,2013,Winter,1
+Pangolin,2.685,2.685,0,EN,Bhaktapur,2012,Winter,5.37
+Seahorse,4.707,4.707,0,Undefined,Bhaktapur,2012,Winter,9.414
+Red Panda,0,3,0,EN,Kathmandu,2012,Winter,3
+Rhinoceros,1,0,0,VU,Chitwan,2012,Autumn ,1
+Leopard,0,1,0,VU,Dhading,2012,Winter,1
+Bear,0,0,2,VU,Jajarkot,2012,Winter,2
+Bear,0,1,0,VU,Kathmandu,2013,Autumn ,1
+Tiger,0,2,0,EN,Kathmandu,2012,Winter,2
+Rhinoceros,1,0,0,VU,Kathmandu,2012,Winter,1
+Pangolin,7.2,7.2,0,EN,Sankhuwasabha,2012,Summer ,14.4
+Pangolin,27,27,0,EN,Sankhuwasabha,2012,Summer ,54
+Pangolin,7,7,0,EN,Sankhuwasabha,2012,Summer ,14
+Tiger,53,2,0,EN,Gorkha,2013,Winter,55
+Tiger,0,5,0,EN,Nuwakot,2013,Winter,5
+Pangolin,21.1,21.1,0,EN,Sunsari,2013,Winter,42.2
+Tiger,7,0,0,EN,Bara,2011,Autumn ,7
+Tiger,0,1,0,EN,Kathmandu,2011,Spring ,1
+Leopard,0,1,0,VU,Kavre,2011,Spring ,1
+Leopard,0,0,1,VU,Pyuthan,2011,Summer ,1
+Rhinoceros,1,0,0,VU,Chitwan,2011,Autumn ,1
+Bear,0,1,0,VU,Kathmandu,2011,Summer ,1
+Elephant,0,2,0,EN,Jhapa,2012,Summer ,2
+Tiger,2,3,0,EN,Kathmandu,2012,Winter,5
+Tiger,0,1,0,EN,Kailali,2014,Winter,1
+Rhinoceros,0,12,0,VU,Bardiya,2014,Summer ,12
+Musk Deer,0,1,0,EN,Sankhuwasabha,2014,Summer ,1
+Red Panda,0,1,0,EN,Kathmandu,2014,Autumn ,1
+Red Panda,0,2,0,EN,Sindhupalchok,2014,Spring ,2
+Tiger,2.2,0.8,0,EN,Makwanpur,2014,Spring ,3
+Tiger,400,1,0,EN,Tanahun,2014,Spring ,401
+Leopard,0,1,0,VU,Kathmandu,2014,Spring ,1
+Elephant,1.73,0,0,EN,Lalitpur,2013,FALSE,1.73
+Tortoise,2,0,1,Undefined,Lalitpur,2015,FALSE,3
+Leopard,0,0,1,VU,Kathmandu,2014,Spring ,1
+Spotted deer,22,0,0,LC,Parsa,2014,Spring ,22
+Leopard,0,1,0,VU,Nawalparasi,2014,Spring ,1
+Owl,0,0,1,Undefined,Bardiya,2014,FALSE,1
+Bear,0,14,0,VU,Dhanusa,2014,Spring ,14
+Leopard,0,1,0,VU,Lalitpur,2015,FALSE,1
+Leopard,0,1,0,VU,Kathmandu,2014,FALSE,1
+Pangolin,1,1,0,EN,Kathmandu,2010,FALSE,2
+Spotted deer,0,1,0,LC,Sunsari,2010,FALSE,1
+Pangolin,2,2,0,EN,Jhapa,2013,Spring ,4
+Tiger,0,23,0,EN,Kathmandu,2010,FALSE,23
+Elephant,0,1,0,EN,Sindhupalchok,2013,Spring ,1
+Leopard,0,2,0,VU,Kathmandu,2013,Summer ,2
+Red Panda,0,2,0,EN,Kathmandu,2013,Summer ,2
+Elephant,1,0,0,EN,Kathmandu,2013,Summer ,1
+Tortoise,1,1,0,Undefined,Sindhupalchok,2013,Summer ,2
+Pangolin,2.1,2.1,0,EN,Sindhupalchok,2014,FALSE,4.2
+Red Panda,0,1,0,EN,Kathmandu,2013,Summer ,1
+Red Panda,0,3,0,EN,Kathmandu,2013,Summer ,3
+Red Panda,0,1,0,EN,Nuwakot,2013,Winter,1
+Red Panda,0,2,0,EN,Jhapa,2015,FALSE,2
+Bear,0,10,0,VU,Kathmandu,2013,Winter,10
+Pangolin,18.5,18.5,0,EN,Sankhuwasabha,2013,FALSE,37
+Pangolin,5,5,0,EN,Sankhuwasabha,2014,FALSE,10
+Leopard,15,6,0,VU,Darchula,2012,Winter,21
+Pangolin,35,35,0,EN,Darchula,2012,Winter,70
+Tiger,0,5,0,EN,Kathmandu,2014,Winter,5
+Tiger,0,1,0,EN,Kanchanpur,2015,Winter,1
+Tiger,4,1,0,EN,Baitadi,2015,Spring ,5
+Tortoise,0,0,5,Undefined,Lalitpur,2015,Winter,5
+Pangolin,3.2,0,0,EN,Kathmandu,2015,Winter,3.2
+Pangolin,4.9,4.9,0,EN,Ilam,2015,FALSE,9.8
+Tiger,0,1,0,EN,Bardiya,2015,Spring ,1
+Owl,0,0,2,Undefined,Kathmandu,2012,Summer ,2
+Owl,0,0,2,Undefined,Kathmandu,2011,Spring ,2
+Elephant,21,0,0,EN,Lalitpur,2014,FALSE,21
+Rhinoceros,0,1,0,VU,Mahottari,2013,Spring ,1
+Red Panda,0,2,0,EN,Bhaktapur,2015,FALSE,2
+Pangolin,9,9,0,EN,Sindhupalchok,2013,Spring ,18
+Pangolin,80,80,0,EN,Sindhupalchok,2013,Spring ,160
+Tiger,1.24,0,0,EN,Bardiya,2013,Spring ,1.24
+Tiger,400,8,0,EN,Nuwakot,2013,Spring ,408
+Pangolin,40,40,0,EN,Darchula,2013,Spring ,80
+Red Panda,0,3,0,EN,Makwanpur,2013,Summer ,3
+Sambar deer ,1,0,0,VU,Sindhupalchok,2013,Summer ,1
+Pangolin,48,48,0,EN,Bhaktapur,2013,Summer ,96
+Tiger,0,3,0,EN,Dang,2013,Summer ,3
+Leopard,0,3,0,VU,Dang,2013,Summer ,3
+Pangolin,40,40,0,EN,Dang,2013,Summer ,80
+Spotted deer,3,0,0,LC,Banke,2013,Summer ,3
+Python ,0,1,0,VU ,Kathmandu,2013,Summer ,1
+Pangolin,14,14,0,EN,Kathmandu,2010,FALSE,28
+Leopard,2.445,1,0,VU,Surkhet,2015,Spring ,3.445
+Pangolin,10,10,0,EN,Sindhupalchok,2010,FALSE,20
+Bear,0,5,0,VU,Sankhuwasabha,2011,Summer ,5
+Red Panda,0,2,0,EN,Kathmandu,2011,Summer ,2
+Bear,0,5,0,VU,Sankhuwasabha,2012,Autumn ,5
+Tiger,0,1,0,EN,Kathmandu,2011,Spring ,1
+Leopard,0,2,0,VU,Dolakha,2011,Summer ,2
+Tiger,7.5,0,0,EN,Bara,2011,Autumn ,7.5
+Rhinoceros,1,0,0,VU,Kathmandu,2012,Winter,1
+Pangolin,4,4,0,EN,Ilam,2012,Spring ,8
+Bear,0.182,0,0,VU,Kathmandu,2012,Summer ,0.182
+Red Panda,0,1,0,EN,Kathmandu,2011,Summer ,1
+Rhinoceros,0,3,0,VU,Chitwan,2012,Summer ,3

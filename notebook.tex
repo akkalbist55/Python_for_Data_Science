@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{The Engineering World \#DataScience 1 \& 2}
+    \title{The Engineering World \#DataScience 30 \& 31}
     
     
     
@@ -279,449 +279,386 @@
     
     
 
-                                           AKKAL BAHADUR BIST 
-
+    
     \begin{verbatim}
-                                    DATA SCIENTIST AT
-                     KATHMANDU INSTITUTE OF APPLIED SCIENCES (KIAS)
-                        Center for Conservation Biology (CCB)
+                               AKKAL BAHADUR BIST 
+                             DATA SCIENCE WITH PYTHON
 \end{verbatim}
 
-    \section{1 FILTERING AND SELECTING DATA WITH
-PANDAS}\label{filtering-and-selecting-data-with-pandas}
+    \hypertarget{linear-regression-for-machine-learning}{%
+\section{LINEAR REGRESSION FOR MACHINE
+LEARNING}\label{linear-regression-for-machine-learning}}
+
+    \hypertarget{linear-regression}{%
+\subsubsection{Linear Regression}\label{linear-regression}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{from} \PY{n+nn}{pylab} \PY{k}{import} \PY{n}{rcParams}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sb}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        
+        \PY{k+kn}{import} \PY{n+nn}{sklearn}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{linear\PYZus{}model} \PY{k}{import} \PY{n}{LinearRegression}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{preprocessing} \PY{k}{import} \PY{n}{scale}
+        \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k}{import} \PY{n}{Counter}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{n}{rcParams} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{4}
+        \PY{n}{sb}\PY{o}{.}\PY{n}{set\PYZus{}style} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whitegrid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{multiplelinear-regression-on-the-enrollment-data}{%
+\subsubsection{(Multiple)Linear Regression on the enrollment
+data}\label{multiplelinear-regression-on-the-enrollment-data}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{address} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mtcars.csv}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{cars} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{address}\PY{p}{)}
+        \PY{n}{cars}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{car\PYZus{}names}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cyl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{disp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{drat}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{wt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{qsec}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vs}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{am}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{carb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{cars}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:}            car\_names   mpg  cyl   disp   hp  drat     wt   qsec  vs  am  gear  \textbackslash{}
+        0          Mazda RX4  21.0    6  160.0  110  3.90  2.620  16.46   0   1     4   
+        1      Mazda RX4 Wag  21.0    6  160.0  110  3.90  2.875  17.02   0   1     4   
+        2         Datsun 710  22.8    4  108.0   93  3.85  2.320  18.61   1   1     4   
+        3     Hornet 4 Drive  21.4    6  258.0  110  3.08  3.215  19.44   1   0     3   
+        4  Hornet Sportabout  18.7    8  360.0  175  3.15  3.440  17.02   0   0     3   
+        
+           carb  
+        0     4  
+        1     4  
+        2     1  
+        3     1  
+        4     2  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{sb}\PY{o}{.}\PY{n}{pairplot}\PY{p}{(}\PY{n}{cars}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} <seaborn.axisgrid.PairGrid at 0x7f1f98314c50>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{cars}\PY{o}{.}\PY{n}{corr}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+           mpg       cyl      disp        hp      drat        wt      qsec  \textbackslash{}
+mpg   1.000000 -0.852162 -0.847551 -0.776168  0.681172 -0.867659  0.418684   
+cyl  -0.852162  1.000000  0.902033  0.832447 -0.699938  0.782496 -0.591242   
+disp -0.847551  0.902033  1.000000  0.790949 -0.710214  0.887980 -0.433698   
+hp   -0.776168  0.832447  0.790949  1.000000 -0.448759  0.658748 -0.708223   
+drat  0.681172 -0.699938 -0.710214 -0.448759  1.000000 -0.712441  0.091205   
+wt   -0.867659  0.782496  0.887980  0.658748 -0.712441  1.000000 -0.174716   
+qsec  0.418684 -0.591242 -0.433698 -0.708223  0.091205 -0.174716  1.000000   
+vs    0.664039 -0.810812 -0.710416 -0.723097  0.440278 -0.554916  0.744535   
+am    0.599832 -0.522607 -0.591227 -0.243204  0.712711 -0.692495 -0.229861   
+gear  0.480285 -0.492687 -0.555569 -0.125704  0.699610 -0.583287 -0.212682   
+carb -0.550925  0.526988  0.394977  0.749812 -0.090790  0.427606 -0.656249   
+
+            vs        am      gear      carb  
+mpg   0.664039  0.599832  0.480285 -0.550925  
+cyl  -0.810812 -0.522607 -0.492687  0.526988  
+disp -0.710416 -0.591227 -0.555569  0.394977  
+hp   -0.723097 -0.243204 -0.125704  0.749812  
+drat  0.440278  0.712711  0.699610 -0.090790  
+wt   -0.554916 -0.692495 -0.583287  0.427606  
+qsec  0.744535 -0.229861 -0.212682 -0.656249  
+vs    1.000000  0.168345  0.206023 -0.569607  
+am    0.168345  1.000000  0.794059  0.057534  
+gear  0.206023  0.794059  1.000000  0.274073  
+carb -0.569607  0.057534  0.274073  1.000000  
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{cars\PYZus{}data} \PY{o}{=} \PY{n}{cars}\PY{o}{.}\PY{n}{ix}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{values}
+        \PY{n}{cars\PYZus{}target} \PY{o}{=} \PY{n}{cars}\PY{o}{.}\PY{n}{ix}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{values}
+        \PY{n}{cars\PYZus{}data\PYZus{}names} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{am}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{X}\PY{p}{,}\PY{n}{Y} \PY{o}{=} \PY{n}{scale}\PY{p}{(}\PY{n}{cars\PYZus{}data}\PY{p}{)}\PY{p}{,} \PY{n}{cars\PYZus{}target}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/home/akkal/anaconda3/lib/python3.6/site-packages/ipykernel\_launcher.py:1: DeprecationWarning: 
+.ix is deprecated. Please use
+.loc for label based indexing or
+.iloc for positional indexing
+
+See the documentation here:
+http://pandas.pydata.org/pandas-docs/stable/indexing.html\#ix-indexer-is-deprecated
+  """Entry point for launching an IPython kernel.
+
+    \end{Verbatim}
+
+    \hypertarget{checking-for-missing-values}{%
+\subsubsection{Checking for missing
+values}\label{checking-for-missing-values}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{missing\PYZus{}values} \PY{o}{=} \PY{n}{X} \PY{o}{==} \PY{n}{np}\PY{o}{.}\PY{n}{NAN}
+        \PY{n}{X}\PY{p}{[}\PY{n}{missing\PYZus{}values} \PY{o}{==} \PY{k+kc}{True}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} array([], dtype=float64)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{LinReg} \PY{o}{=} \PY{n}{LinearRegression}\PY{p}{(}\PY{n}{normalize}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{LinReg}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X}\PY{p}{,}\PY{n}{Y}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{LinReg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X}\PY{p}{,}\PY{n}{Y}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0.7595657755568964
+
+    \end{Verbatim}
+
+    \hypertarget{logestic-regression-for-machine-learning}{%
+\section{LOGESTIC REGRESSION FOR MACHINE
+LEARNING}\label{logestic-regression-for-machine-learning}}
+
+    \hypertarget{logestic-regression}{%
+\subsubsection{Logestic Regression}\label{logestic-regression}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
         \PY{k+kn}{from} \PY{n+nn}{pandas} \PY{k}{import} \PY{n}{Series}\PY{p}{,} \PY{n}{DataFrame}
+        \PY{k+kn}{from} \PY{n+nn}{pylab} \PY{k}{import} \PY{n}{rcParams}
+        \PY{k+kn}{import} \PY{n+nn}{scipy} 
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k}{import} \PY{n}{spearmanr}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sb}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        
+        \PY{k+kn}{import} \PY{n+nn}{sklearn}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{linear\PYZus{}model} \PY{k}{import} \PY{n}{LogisticRegression}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{metrics}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{preprocessing} \PY{k}{import} \PY{n}{scale}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{preprocessing}
 \end{Verbatim}
 
 
-    \section{Selecting and retriving
-data}\label{selecting-and-retriving-data}
-
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{series\PYZus{}obj} \PY{o}{=} \PY{n}{Series}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{,} \PY{n}{index} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 6}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+         \PY{n}{rcParams} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{4}
+         \PY{n}{sb}\PY{o}{.}\PY{n}{set\PYZus{}style} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whitegrid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
+    \hypertarget{logestic-regression-on-mtcars}{%
+\subsubsection{Logestic regression on
+mtcars}\label{logestic-regression-on-mtcars}}
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{series\PYZus{}obj}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{address} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mtcars.csv}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{cars} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{address}\PY{p}{)}
+         \PY{n}{cars}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{car\PYZus{}names}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cyl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{disp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{drat}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{wt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{qsec}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vs}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{am}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{carb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{cars}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} row 1    0
-        row 2    1
-        row 3    2
-        row 4    3
-        row 5    4
-        row 6    5
-        row 7    6
-        row 8    7
-        dtype: int64
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{series\PYZus{}obj}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 6
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{series\PYZus{}obj}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} row 1    0
-        row 8    7
-        dtype: int64
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}
-         \PY{n}{DF\PYZus{}obj} \PY{o}{=} \PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{)} \PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{,} \PY{n}{index} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 6}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 6}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{DF\PYZus{}obj}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:}        column 1  column 2  column 3  column 4  column 5  column 6  column 7  \textbackslash{}
-         row 1  0.870124  0.582277  0.278839  0.185911  0.411100  0.117376  0.684969   
-         row 2  0.556229  0.367080  0.402366  0.113041  0.447031  0.585445  0.161985   
-         row 3  0.326051  0.699186  0.366395  0.836375  0.481343  0.516502  0.383048   
-         row 4  0.514244  0.559053  0.034450  0.719930  0.421004  0.436935  0.281701   
-         row 5  0.669612  0.456069  0.289804  0.525819  0.559242  0.745284  0.828346   
-         row 6  0.077140  0.644862  0.309258  0.524254  0.958092  0.883201  0.295432   
-         row 7  0.088702  0.641717  0.132421  0.766486  0.076742  0.331044  0.679852   
-         row 8  0.655146  0.602120  0.719055  0.415219  0.396542  0.825139  0.712552   
+{\color{outcolor}Out[{\color{outcolor}11}]:}            car\_names   mpg  cyl   disp   hp  drat     wt   qsec  vs  am  gear  \textbackslash{}
+         0          Mazda RX4  21.0    6  160.0  110  3.90  2.620  16.46   0   1     4   
+         1      Mazda RX4 Wag  21.0    6  160.0  110  3.90  2.875  17.02   0   1     4   
+         2         Datsun 710  22.8    4  108.0   93  3.85  2.320  18.61   1   1     4   
+         3     Hornet 4 Drive  21.4    6  258.0  110  3.08  3.215  19.44   1   0     3   
+         4  Hornet Sportabout  18.7    8  360.0  175  3.15  3.440  17.02   0   0     3   
          
-                column 8  
-         row 1  0.437611  
-         row 2  0.520719  
-         row 3  0.997541  
-         row 4  0.900274  
-         row 5  0.823694  
-         row 6  0.512376  
-         row 7  0.509213  
-         row 8  0.097937  
+            carb  
+         0     4  
+         1     4  
+         2     1  
+         3     1  
+         4     2  
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{column 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:}        column 5  column 2
-         row 2  0.447031   0.36708
-         row 2  0.447031   0.36708
-\end{Verbatim}
-            
-    \section{Data Slicing}\label{data-slicing}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{series\PYZus{}obj}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} row 3    2
-         row 4    3
-         row 5    4
-         row 6    5
-         row 7    6
-         dtype: int64
-\end{Verbatim}
-            
-    \section{Comparing with Scalars}\label{comparing-with-scalars}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{DF\PYZus{}obj} \PY{o}{\PYZlt{}} \PY{o}{.}\PY{l+m+mi}{2}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:}        column 1  column 2  column 3  column 4  column 5  column 6  column 7  \textbackslash{}
-         row 1     False     False     False      True     False      True     False   
-         row 2     False     False     False      True     False     False      True   
-         row 3     False     False     False     False     False     False     False   
-         row 4     False     False      True     False     False     False     False   
-         row 5     False     False     False     False     False     False     False   
-         row 6      True     False     False     False     False     False     False   
-         row 7      True     False      True     False      True     False     False   
-         row 8     False     False     False     False     False     False     False   
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{cars\PYZus{}data} \PY{o}{=} \PY{n}{cars}\PY{o}{.}\PY{n}{ix}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{values}
+         \PY{n}{cars\PYZus{}data\PYZus{}names} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{drat}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{carb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
          
-                column 8  
-         row 1     False  
-         row 2     False  
-         row 3     False  
-         row 4     False  
-         row 5     False  
-         row 6     False  
-         row 7     False  
-         row 8      True  
+         \PY{n}{y} \PY{o}{=} \PY{n}{cars}\PY{o}{.}\PY{n}{ix}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{]}\PY{o}{.}\PY{n}{values}
 \end{Verbatim}
-            
-    \section{FIltering with scalars}\label{filtering-with-scalars}
+
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{series\PYZus{}obj}\PY{p}{[}\PY{n}{series\PYZus{}obj} \PY{o}{\PYZgt{}} \PY{l+m+mi}{6}\PY{p}{]}
+/home/akkal/anaconda3/lib/python3.6/site-packages/ipykernel\_launcher.py:1: DeprecationWarning: 
+.ix is deprecated. Please use
+.loc for label based indexing or
+.iloc for positional indexing
+
+See the documentation here:
+http://pandas.pydata.org/pandas-docs/stable/indexing.html\#ix-indexer-is-deprecated
+  """Entry point for launching an IPython kernel.
+
+    \end{Verbatim}
+
+    \hypertarget{checking-for-independence-between-features}{%
+\subsubsection{Checking for independence between
+features}\label{checking-for-independence-between-features}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{sb}\PY{o}{.}\PY{n}{regplot}\PY{p}{(}\PY{n}{x} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{drat}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{carb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{data} \PY{o}{=} \PY{n}{cars}\PY{p}{,} \PY{n}{scatter}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}15}]:} row 8    7
+{\color{outcolor}Out[{\color{outcolor}13}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x7f1f5a0eea20>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{drat} \PY{o}{=} \PY{n}{cars}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{drat}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{carb} \PY{o}{=} \PY{n}{cars}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{carb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{spearmanr\PYZus{}coefficient}\PY{p}{,} \PY{n}{p\PYZus{}value} \PY{o}{=} \PY{n}{spearmanr}\PY{p}{(}\PY{n}{drat}\PY{p}{,} \PY{n}{carb}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{spearmanr Rand Correlation Coefficient }\PY{l+s+si}{\PYZpc{}0.3f}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{spearmanr\PYZus{}coefficient}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+spearmanr Rand Correlation Coefficient -0.125
+
+    \end{Verbatim}
+
+    \hypertarget{checking-for-missing-values}{%
+\subsubsection{Checking for missing
+values}\label{checking-for-missing-values}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{cars}\PY{o}{.}\PY{n}{isnull}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} car\_names    0
+         mpg          0
+         cyl          0
+         disp         0
+         hp           0
+         drat         0
+         wt           0
+         qsec         0
+         vs           0
+         am           0
+         gear         0
+         carb         0
          dtype: int64
 \end{Verbatim}
             
-    \section{Setting values with scalars}\label{setting-values-with-scalars}
+    \hypertarget{checking-that-your-binary-or-ordinal}{%
+\subsubsection{Checking that your binary or
+ordinal}\label{checking-that-your-binary-or-ordinal}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{series\PYZus{}obj} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{8}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{series\PYZus{}obj}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{sb}\PY{o}{.}\PY{n}{countplot}\PY{p}{(}\PY{n}{x} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{am}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{data} \PY{o}{=} \PY{n}{cars}\PY{p}{,} \PY{n}{palette}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hls}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}17}]:} row 1    8
-         row 2    1
-         row 3    2
-         row 4    3
-         row 5    8
-         row 6    5
-         row 7    8
-         row 8    8
-         dtype: int64
+{\color{outcolor}Out[{\color{outcolor}16}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x7f1f59bf3828>
 \end{Verbatim}
             
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:}  \PY{n}{DF\PYZus{}obj} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{8}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{DF\PYZus{}obj}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}20}]:}        column 1  column 2  column 3  column 4  column 5  column 6  column 7  \textbackslash{}
-         row 1  0.870124  0.582277  0.278839  0.185911  0.411100  0.117376  0.684969   
-         row 2  0.556229  0.367080  0.402366  0.113041  0.447031  0.585445  0.161985   
-         row 3  0.326051  0.699186  0.366395  0.836375  0.481343  0.516502  0.383048   
-         row 4  0.514244  0.559053  0.034450  0.719930  0.421004  0.436935  0.281701   
-         row 5  0.669612  0.456069  0.289804  0.525819  0.559242  0.745284  0.828346   
-         row 6  0.077140  0.644862  0.309258  0.524254  0.958092  0.883201  0.295432   
-         row 7  0.088702  0.641717  0.132421  0.766486  0.076742  0.331044  0.679852   
-         row 8  0.655146  0.602120  0.719055  0.415219  0.396542  0.825139  0.712552   
-         
-                column 8  (row 1, row 5, row 8)  
-         row 1  0.437611                      8  
-         row 2  0.520719                      8  
-         row 3  0.997541                      8  
-         row 4  0.900274                      8  
-         row 5  0.823694                      8  
-         row 6  0.512376                      8  
-         row 7  0.509213                      8  
-         row 8  0.097937                      8  
-\end{Verbatim}
-            
-    \section{2 TREATING MISSING VALUES}\label{treating-missing-values}
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_26_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{checking-that-yur-data-size-is-sufficient}{%
+\subsubsection{Checking that yur data size is
+sufficient}\label{checking-that-yur-data-size-is-sufficient}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{missing} \PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{NaN}
-         \PY{n}{series\PYZus{}obj} \PY{o}{=} \PY{n}{Series}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{missing}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{missing}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{row 6}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
-         \PY{n}{series\PYZus{}obj}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}32}]:} 0    row 1
-         1    row 2
-         2      NaN
-         3    row 4
-         4    row 5
-         5      NaN
-         6    row 6
-         dtype: object
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{series\PYZus{}obj}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}33}]:} 0    row 1
-         1    row 2
-         2      NaN
-         3    row 4
-         4    row 5
-         5      NaN
-         6    row 6
-         dtype: object
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{series\PYZus{}obj}\PY{o}{.}\PY{n}{isnull}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}34}]:} 0    False
-         1    False
-         2     True
-         3    False
-         4    False
-         5     True
-         6    False
-         dtype: bool
-\end{Verbatim}
-            
-    \section{Filling on the missing
-values}\label{filling-on-the-missing-values}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}
-         \PY{n}{DF\PYZus{}obj} \PY{o}{=} \PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{36}\PY{p}{)} \PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
-         \PY{n}{DF\PYZus{}obj}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}41}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734 -0.232312
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272 -1.049942
-         3  1.056610 -0.419678  2.294842 -2.594487  2.822756  0.680889
-         4 -1.577693 -1.976254  0.533340 -0.290870 -0.513520  1.982626
-         5  0.226001 -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}42}]:} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{missing}
-         \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]} \PY{o}{=} \PY{n}{missing}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{cars}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}43}]:} \PY{n}{DF\PYZus{}obj}
-\end{Verbatim}
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 32 entries, 0 to 31
+Data columns (total 12 columns):
+car\_names    32 non-null object
+mpg          32 non-null float64
+cyl          32 non-null int64
+disp         32 non-null float64
+hp           32 non-null int64
+drat         32 non-null float64
+wt           32 non-null float64
+qsec         32 non-null float64
+vs           32 non-null int64
+am           32 non-null int64
+gear         32 non-null int64
+carb         32 non-null int64
+dtypes: float64(5), int64(6), object(1)
+memory usage: 3.1+ KB
 
+    \end{Verbatim}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}43}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734       NaN
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272       NaN
-         3       NaN -0.419678  2.294842 -2.594487  2.822756       NaN
-         4       NaN -1.976254  0.533340 -0.290870 -0.513520       NaN
-         5       NaN -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
+    \hypertarget{deploying-and-evaluating-yur-model}{%
+\subsubsection{Deploying and evaluating yur
+model}\label{deploying-and-evaluating-yur-model}}
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}44}]:} \PY{n}{filled\PYZus{}DF} \PY{o}{=} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{filled\PYZus{}DF}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}45}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734  0.000000
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272  0.000000
-         3  0.000000 -0.419678  2.294842 -2.594487  2.822756  0.000000
-         4  0.000000 -1.976254  0.533340 -0.290870 -0.513520  0.000000
-         5  0.000000 -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{filled\PYZus{}DF} \PY{o}{=} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{:}\PY{l+m+mf}{1.25}\PY{p}{\PYZcb{}}\PY{p}{)}
-         \PY{n}{filled\PYZus{}DF}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}47}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734  1.250000
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272  1.250000
-         3  0.100000 -0.419678  2.294842 -2.594487  2.822756  1.250000
-         4  0.100000 -1.976254  0.533340 -0.290870 -0.513520  1.250000
-         5  0.100000 -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{filled\PYZus{}DF} \PY{o}{=} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{n}{method} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ffill}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{X} \PY{o}{=} \PY{n}{scale}\PY{p}{(}\PY{n}{cars\PYZus{}data}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{filled\PYZus{}DF}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}49}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734 -0.222326
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272 -0.222326
-         3  2.152957 -0.419678  2.294842 -2.594487  2.822756 -0.222326
-         4  2.152957 -1.976254  0.533340 -0.290870 -0.513520 -0.222326
-         5  2.152957 -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
-    \section{Counting missing values}\label{counting-missing-values}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}
-         \PY{n}{DF\PYZus{}obj} \PY{o}{=} \PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{36}\PY{p}{)} \PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
-         \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{missing}
-         \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]} \PY{o}{=} \PY{n}{missing}
-         \PY{n}{DF\PYZus{}obj}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}50}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734       NaN
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272       NaN
-         3       NaN -0.419678  2.294842 -2.594487  2.822756       NaN
-         4       NaN -1.976254  0.533340 -0.290870 -0.513520       NaN
-         5       NaN -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}51}]:} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{isnull}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}51}]:} 0    3
-         1    0
-         2    0
-         3    0
-         4    0
-         5    4
-         dtype: int64
-\end{Verbatim}
-            
-    \section{Filtering out missing
-values}\label{filtering-out-missing-values}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}52}]:} \PY{n}{DF\PYZus{}no\PYZus{}NaN} \PY{o}{=} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{LogReg} \PY{o}{=} \PY{n}{LogisticRegression}\PY{p}{(}\PY{p}{)}
+         \PY{n}{LogReg}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X}\PY{p}{,}\PY{n}{y}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{LogReg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{DF\PYZus{}no\PYZus{}NaN}
-\end{Verbatim}
+0.8125
 
+    \end{Verbatim}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}53}]:}           1         2         3         4
-         0  1.026890 -0.839585 -0.591182 -0.956888
-         1  1.837905 -2.053231  0.868583 -0.920734
-         2 -1.334661  0.076380 -1.246089  1.202272
-         3 -0.419678  2.294842 -2.594487  2.822756
-         4 -1.976254  0.533340 -0.290870 -0.513520
-         5 -1.839905  1.607671  0.388292  0.399732
-\end{Verbatim}
-            
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}54}]:} \PY{n}{DF\PYZus{}obj}\PY{o}{.}\PY{n}{dropna} \PY{p}{(}\PY{n}{how} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{all}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{y\PYZus{}pred} \PY{o}{=} \PY{n}{LogReg}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X}\PY{p}{)}
+         \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{classification\PYZus{}report}
+         \PY{n+nb}{print} \PY{p}{(}\PY{n}{classification\PYZus{}report}\PY{p}{(}\PY{n}{y}\PY{p}{,}\PY{n}{y\PYZus{}pred}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}54}]:}           0         1         2         3         4         5
-         0  0.228273  1.026890 -0.839585 -0.591182 -0.956888 -0.222326
-         1 -0.619915  1.837905 -2.053231  0.868583 -0.920734       NaN
-         2  2.152957 -1.334661  0.076380 -1.246089  1.202272       NaN
-         3       NaN -0.419678  2.294842 -2.594487  2.822756       NaN
-         4       NaN -1.976254  0.533340 -0.290870 -0.513520       NaN
-         5       NaN -1.839905  1.607671  0.388292  0.399732  0.405477
-\end{Verbatim}
-            
+    \begin{Verbatim}[commandchars=\\\{\}]
+             precision    recall  f1-score   support
+
+          0       0.88      0.79      0.83        19
+          1       0.73      0.85      0.79        13
+
+avg / total       0.82      0.81      0.81        32
+
+
+    \end{Verbatim}
+
 
     % Add a bibliography block to the postdoc
     
